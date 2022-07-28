@@ -37,7 +37,7 @@
           </div>
           <div class="d-flex align-center mb-5">
             <input type="checkbox" class="checkbox mr-3"> 
-            <div>Я согласен с условиями обработки персональных данных</div>
+            <div>Я согласен с <a href="https://drive.google.com/file/d/1Mt36_m0zbEqANmhw4xNKrtNFMX9mK8k0/view">условиями обработки</a> персональных данных</div>
           </div>
           <v-btn color="#A5CD39">Заказать</v-btn>
         </div>
@@ -56,11 +56,15 @@ export default {
   },
 
   data: () => ({
-    overlay: 'false'
+    overlay: 'false',
+    pdfIsOpen: 'false'
   }),
   methods: {
     formOpening(value) {
       this.overlay = value
+    },
+    openPDF(value) {
+      this.pdfIsOpen = value
     }
   },
   props: [
@@ -124,5 +128,9 @@ a {
   display: grid;
   grid-template-columns: 1fr 2.25fr;
   column-gap: 25px;
+}
+.pdf {
+  position: absolute !important;
+  z-index: 2;
 }
 </style>
